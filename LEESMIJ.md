@@ -21,7 +21,9 @@ Gorans eigen dashboard voor AIS, alleen voor hem. In AIS-huisstijl, zonder GO 4I
     - een conflictmelding als een bericht intussen op een ander toestel is gewijzigd;
     - een prullenbak, en de git-geschiedenis als versiebeheer;
     - een webadres dat verandert na publicatie wordt automatisch doorverwezen (`oudeSlugs`).
-  - **Lokaal** (localhost) gebruikt het tabblad een testopslag in de browser, en er gaat niets naar GitHub.
+  - **Planning:** ingeplande berichten staan apart. De momenten links staan vast; de berichten sleep je erlangs (of met ↑/↓), en dan wisselen ze van moment. Op een telefoon sleep je aan de greep ⋮⋮.
+  - **Achteraan in de planning:** een nieuw bericht kan in één keer een week na het laatste ingeplande bericht worden gezet, op dezelfde tijd. Is er een planning, dan is dat de standaardkeuze.
+  - **Lokaal** (localhost) gebruikt het tabblad een testopslag in de browser, en er gaat niets naar GitHub. Er staan drie voorbeeldberichten in, met foto's uit `data-test/voorbeeld/` (gaat niet online).
   - **Op de site:** `ais-groep-site/concept/nieuws_bron.py` maakt van gepubliceerde berichten pagina's in de artikelstijl, plus kaartjes op /nieuws/, sitemap, BlogPosting-gegevens en het deelbeeld. Dezelfde Markdown-regels als het dashboard (getest: gelijke uitvoer).
 - **Later mogelijk:** Search Console en Matomo. Search Console is op 22 okt 2026 op verzoek van Goran weer uit het dashboard gehaald ("voor nu").
 
