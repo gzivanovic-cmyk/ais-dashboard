@@ -9,8 +9,7 @@ Gorans eigen dashboard voor AIS, alleen voor hem. In AIS-huisstijl, zonder GO 4I
   - "Open in Mail" met Gorans AIS-handtekening;
   - offline halen, opnieuw checken, en verwijderen door te vegen.
 - **B. Per maand**: het aantal website-checks per maand (laatste 12 maanden), met een tabelweergave. Gewone websiteaanvragen gaan niet naar de bot en tellen nog niet mee.
-- **C. Search Console**: haalt de gegevens rechtstreeks bij Google op nadat Goran op "Koppel Google" klikt. Daarbij wordt nergens een sleutel opgeslagen. Hiervoor is een OAuth-client-ID nodig (`CONFIG.googleClientId`; de stappen staan in het tabblad).
-- **Later mogelijk:** Matomo (bezoekers en formulieren van de nieuwe site).
+- **Later mogelijk:** Search Console en Matomo. Search Console is op 22 okt 2026 op verzoek van Goran weer uit het dashboard gehaald ("voor nu").
 
 ## Gegevens en beveiliging
 - **Bron:** de gegevens komen van de websitecheck-bot (sync.js). Ze staan in `https://gzivanovic-cmyk.github.io/websitecheck/data-ais/`:
@@ -32,11 +31,7 @@ Gorans eigen dashboard voor AIS, alleen voor hem. In AIS-huisstijl, zonder GO 4I
 
 ## Nog te doen voor livegang (pas na Gorans akkoord)
 1. **Gegevens:** de bot-sessie maakt `data-ais/` aan; Goran kiest het AIS-wachtwoord.
-2. **Search Console:**
-   - Goran controleert de property voor ais-groep.nl;
-   - hij maakt een OAuth-client-ID aan;
-   - die client-ID komt in `CONFIG.googleClientId`.
-3. **CORS:** de scripts op go4itstudio.com moeten `https://rapport.ais-groep.nl` toestaan (zijtak `ais-dashboard-koppeling` in de bot-sessie).
+2. **CORS:** de scripts op go4itstudio.com moeten `https://rapport.ais-groep.nl` toestaan (zijtak `ais-dashboard-koppeling` in de bot-sessie).
 
 ## Online zetten
 - **Adres:** https://rapport.ais-groep.nl/dashboard/ — een map van de bestaande rapportsite, dus geen eigen DNS-regel nodig. dashboard.ais-groep.nl is al in gebruik door een AIS-webapp; daar niet aankomen.
