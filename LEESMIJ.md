@@ -12,7 +12,8 @@ Gorans eigen dashboard voor AIS, alleen voor hem. In AIS-huisstijl, zonder GO 4I
 - **C. Nieuws** (`assets/nieuws.js` en `assets/nieuws.css`): berichten voor ais-groep.nl/nieuws schrijven, inplannen en beheren.
   - **Opslag:** de privé-repo `gzivanovic-cmyk/ais-nieuws`, één JSON-bestand per bericht plus beelden; zie de README daar.
   - **Koppelen:** per toestel één keer, met een fine-grained GitHub-token dat Goran zelf aanmaakt (alleen ais-nieuws, Contents: Read and write). Het token wordt versleuteld met het dashboardwachtwoord en bewaard in localStorage.
-  - **Schrijven:** titel, webadres, samenvatting (180), "In het kort" (max. 3), rubriek, schrijver, omslagfoto met beschrijving (verkleind tot 1600 px), tekst in Markdown met knoppenbalk, en SEO-titel en -omschrijving.
+  - **Schrijven:** titel, webadres, samenvatting (180), "In het kort" (max. 3), rubriek, schrijver, omslagfoto met beschrijving (liggend, min. 1600 × 1000, verkleind tot 1600 px), tekst en SEO-titel en -omschrijving.
+  - **Tekstverwerker:** de tekst schrijf je zoals in Word (contenteditable met knoppen: tussenkop, kleine kop, vet, schuin, link, lijsten, citaat; ⌘B/⌘I/⌘K). Plakken uit Word of Google Docs neemt koppen, vet, schuin, links en lijsten mee; de rest valt weg. Opgeslagen wordt Markdown: htmlNaarMd() is de omgekeerde van md(), getest op heen en terug zonder verschil.
   - **Hulp bij het schrijven:** een voorbeeld in de stijl van de site, een SEO-checklist met score (onder 70 vraagt hij of je het zeker weet, ook bij inplannen), een Google-voorbeeld en een deelafbeelding van 1200 × 630 (met foto of rustig).
   - **Status:** concept, ingepland, gepubliceerd of prullenbak. "Opslaan" verandert de status nooit. Terug naar concept of offline halen is een aparte knop met een bevestiging.
   - **Tijden:** altijd Nederlandse tijd (Europe/Amsterdam, met de juiste zomer- of wintertijd in de opgeslagen tijd).
