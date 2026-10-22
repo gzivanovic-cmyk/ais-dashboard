@@ -750,7 +750,8 @@ table.top td.q { word-break: break-word; }
       var abo = await reg.pushManager.getSubscription() || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: naarBytes(CONFIG.vapid) });
       var r = await fetch(CONFIG.server + '/websitecheck-push.php', { method: 'POST', body: new URLSearchParams({ actie: 'aanmelden', app: 'ais', sleutel: await pushSleutel(), abonnement: JSON.stringify(abo), toestel: (iOS ? 'iPhone' : 'Computer') + (losseApp ? ' (app)' : '') }) });
       var j = await r.json();
-      if (!j.ok) throw new Error(j.reden === 'sleutel' ? 'het wachtwoord past niet bij eerdere meldingen' : 'de server gaf ' + r.status);
+      if (j.reden === 'nog-niet') { await bevestig('Meldingen kunnen nog niet aan', 'De bot moet eerst het AIS-wachtwoord krijgen. Zodra dat geregeld is, kun je hier meldingen aanzetten.', 'Begrepen', true); knop.disabled = false; meldStatus(); return; }
+      if (!j.ok) throw new Error(j.reden === 'sleutel' ? 'het wachtwoord klopt niet' : 'de server gaf ' + r.status);
       await bevestig('Meldingen staan aan', 'Je krijgt nu meteen een proefmelding. Daarna hoor je het zodra er via ais-groep.nl een website-check wordt aangevraagd.', 'Top', true);
     } catch (e) {
       await bevestig('Dat lukte niet', 'Meldingen aanzetten lukte niet: ' + e.message + '. Probeer het zo nog eens.', 'Oké', true);
