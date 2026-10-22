@@ -1,4 +1,4 @@
-/* Service worker van het AIS-dashboard (dashboard.ais-groep.nl): toont de pushmeldingen over AIS-website-checks
+/* Service worker van het AIS-dashboard (rapport.ais-groep.nl/dashboard): toont de pushmeldingen over AIS-website-checks
    ({titel, tekst, url, nieuw} van websitecheck-push.php, app=ais), zet het rode getal op het app-icoon en opent het dashboard
    bij een tik op de melding. Het getal staat in IndexedDB (ais-dashboard / kv / badge); het dashboard zet het op 0 bij openen. */
 function teller(doe) {
@@ -33,11 +33,13 @@ self.addEventListener('push', function (e) {
 });
 self.addEventListener('notificationclick', function (e) {
   e.notification.close();
-  var url = (e.notification.data && e.notification.data.url) || './';
+  // het dashboard staat in een map van rapport.ais-groep.nl: altijd binnen die map openen, alleen het #check-deel van de link telt
+  var url = (e.notification.data && e.notification.data.url) || '';
+  url = self.registration.scope + (url.indexOf('#') !== -1 ? url.slice(url.indexOf('#')) : '');
   e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (vensters) {
     for (var i = 0; i < vensters.length; i++) {
       var w = vensters[i];
-      if ('focus' in w) {
+      if ('focus' in w && w.url.indexOf(self.registration.scope) === 0) {
         if (url.indexOf('#check=') !== -1) { w.postMessage({ open: url.split('#check=')[1] }); }
         return w.focus();
       }

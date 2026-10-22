@@ -1,4 +1,4 @@
-# AIS Dashboard (dashboard.ais-groep.nl)
+# AIS Dashboard (rapport.ais-groep.nl/dashboard)
 
 Gorans eigen dashboard voor AIS, alleen voor hem. In AIS-huisstijl, zonder GO 4IT. Het is een web-app: op de iPhone zet je hem op het beginscherm.
 
@@ -36,4 +36,9 @@ Gorans eigen dashboard voor AIS, alleen voor hem. In AIS-huisstijl, zonder GO 4I
    - Goran controleert de property voor ais-groep.nl;
    - hij maakt een OAuth-client-ID aan;
    - die client-ID komt in `CONFIG.googleClientId`.
-3. **Hosting:** een eigen repo op GitHub Pages, bijvoorbeeld `ais-dashboard`, met een CNAME naar `dashboard.ais-groep.nl`. Goran zet de DNS-regel zelf bij 123-webhost. `data-test/` gaat niet mee online.
+3. **CORS:** de scripts op go4itstudio.com moeten `https://rapport.ais-groep.nl` toestaan (zijtak `ais-dashboard-koppeling` in de bot-sessie).
+
+## Online zetten
+- **Adres:** https://rapport.ais-groep.nl/dashboard/ — een map van de bestaande rapportsite, dus geen eigen DNS-regel nodig. dashboard.ais-groep.nl is al in gebruik door een AIS-webapp; daar niet aankomen.
+- **Hoe:** `tools/zet-online.sh` kopieert `index.html`, `sw.js`, `manifest.json` en `assets/` naar `dashboard/` in `~/Audo/websitecheck-rapport-ais` en pusht alleen die map. De bot publiceert in dezelfde repo, maar alleen in `r/`.
+- Deze repo (`ais-dashboard`) is de bron; GitHub Pages staat hier uit. `data-test/` gaat nooit mee online.

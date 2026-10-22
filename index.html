@@ -217,7 +217,7 @@ table.top td.q { word-break: break-word; }
     // AIS-checks van de bot (zelfde formaat als het overzicht van de websitechecks, eigen AIS-wachtwoord)
     bron: LOKAAL ? 'data-test/' : 'https://gzivanovic-cmyk.github.io/websitecheck/data-ais/',
     test: LOKAAL,
-    // server voor meldingen en acties (CORS voor dashboard.ais-groep.nl); app=ais
+    // server voor meldingen en acties (CORS voor rapport.ais-groep.nl); app=ais
     server: 'https://www.go4itstudio.com',
     vapid: 'BBgmOSuZO2k5gi-LmZb8IyHE6hJbJgieE-G7U84VSFvx4-wiWLUxw_ob8o8F_4oZRKajjGkY-c_Xi4BoC7SBNXw',
     bot: 'g.zivanovic@mail.grokbot.com',
@@ -620,7 +620,7 @@ table.top td.q { word-break: break-word; }
         '<div class="blok"><h4>Nog niet gekoppeld</h4><p style="font-size:14.5px">Eenmalig instellen (ongeveer 10 minuten):</p><ol class="stappen">' +
         '<li>Controleer in <a href="https://search.google.com/search-console" target="_blank" rel="noopener">Google Search Console</a> of er een property is voor <b>ais-groep.nl</b> en of jouw Google-account erbij kan. Zo niet: voeg hem toe als <b>Domein</b>-property en bevestig met de DNS-regel bij 123-webhost.</li>' +
         '<li>Maak in <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud</a> een project (bijvoorbeeld "AIS Dashboard") en zet de <b>Google Search Console API</b> aan.</li>' +
-        '<li>Maak onder <b>APIs en services → Inloggegevens</b> een <b>OAuth-client-ID</b> van het type <b>Webapplicatie</b>. Zet bij geautoriseerde JavaScript-oorsprongen: <code>https://dashboard.ais-groep.nl</code> en voor de test <code>http://localhost:8816</code>. Stel het toestemmingsscherm in op <b>Extern</b>, in testmodus, met jouw adres als testgebruiker.</li>' +
+        '<li>Maak onder <b>APIs en services → Inloggegevens</b> een <b>OAuth-client-ID</b> van het type <b>Webapplicatie</b>. Zet bij geautoriseerde JavaScript-oorsprongen: <code>https://rapport.ais-groep.nl</code> en voor de test <code>http://localhost:8816</code>. Stel het toestemmingsscherm in op <b>Extern</b>, in testmodus, met jouw adres als testgebruiker.</li>' +
         '<li>Geef mij de client-ID (een lange code die eindigt op <code>.apps.googleusercontent.com</code>). Dat is geen geheim; ik zet hem in het dashboard. Daarna verschijnt hier de knop <b>Koppel Google</b>.</li></ol></div>' +
         '<p class="later">Later mogelijk: bezoekers en formulieren van de nieuwe site via Matomo.</p>';
       return;
